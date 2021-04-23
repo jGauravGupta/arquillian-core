@@ -16,7 +16,7 @@
  */
 package org.jboss.arquillian.testenricher.ejb;
 
-import javax.ejb.EJB;
+import jakarta.ejb.EJB;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

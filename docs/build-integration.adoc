@@ -281,7 +281,7 @@ running Arquillian tests in the Weld EE Embedded container:
 [source,java]
 ----
 dependencies {
-   compileOnly group: 'javax.enterprise', name: 'cdi-api', version: libraryVersions.cdi
+   compileOnly group: 'jakarta.enterprise', name: 'cdi-api', version: libraryVersions.cdi
 
    testCompile group: 'junit', name: 'junit', version: libraryVersions.junit
    testCompile group: 'org.jboss.arquillian', name: 'arquillian-junit', version: libraryVersions.arquillian
@@ -354,7 +354,7 @@ configurations {
 }
 
 dependencies {
-   compileOnly group: 'javax.enterprise', name: 'cdi-api', version: libraryVersions.cdi
+   compileOnly group: 'jakarta.enterprise', name: 'cdi-api', version: libraryVersions.cdi
 
    testCompile group: 'junit', name: 'junit', version: libraryVersions.junit
    testCompile group: 'org.jboss.arquillian', name: 'arquillian-junit', version: libraryVersions.arquillian
@@ -498,7 +498,7 @@ jbossas-remote-profile.gradle:
 [source,java]
 ----
 dependencies {
-   testRuntime group: 'javax.enterprise', name: 'cdi-api', version: libraryVersions.cdi
+   testRuntime group: 'jakarta.enterprise', name: 'cdi-api', version: libraryVersions.cdi
    testRuntime group: 'org.jboss.arquillian.container', name: 'arquillian-jbossas-remote-6', version: libraryVersions.arquillian
    testRuntime group: 'org.jboss.jbossas', name: 'jboss-as-server', classifier: 'client', version: libraryVersions.jbossas, transitive: false
    testRuntime group: 'org.jboss.jbossas', name: 'jboss-as-profileservice', classifier: 'client', version: libraryVersions.jbossas
@@ -547,7 +547,7 @@ configurations {
 }
 
 dependencies {
-   compileOnly group: 'javax.enterprise', name: 'cdi-api', version: libraryVersions.cdi
+   compileOnly group: 'jakarta.enterprise', name: 'cdi-api', version: libraryVersions.cdi
 
    testCompile group: 'junit', name: 'junit', version: libraryVersions.junit
    testCompile group: 'org.jboss.arquillian', name: 'arquillian-junit', version: libraryVersions.arquillian

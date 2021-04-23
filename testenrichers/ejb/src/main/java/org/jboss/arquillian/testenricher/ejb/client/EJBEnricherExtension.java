@@ -34,7 +34,7 @@ public class EJBEnricherExtension implements LoadableExtension {
         builder.service(AuxiliaryArchiveAppender.class, EJBEnricherArchiveAppender.class);
 
         // only load if EJB is on ClassPath
-        if (Validate.classExists("javax.ejb.EJB")) {
+        if (Validate.classExists("jakarta.ejb.EJB")) {
             builder.service(TestEnricher.class, EJBInjectionEnricher.class);
         }
     }

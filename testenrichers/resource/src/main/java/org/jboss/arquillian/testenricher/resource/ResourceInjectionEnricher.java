@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import org.jboss.arquillian.core.api.Instance;
@@ -40,7 +40,7 @@ import org.jboss.arquillian.test.spi.TestEnricher;
  */
 public class ResourceInjectionEnricher implements TestEnricher {
     private static final String RESOURCE_LOOKUP_PREFIX = "java:comp/env";
-    private static final String ANNOTATION_NAME = "javax.annotation.Resource";
+    private static final String ANNOTATION_NAME = "jakarta.annotation.Resource";
 
     private static final Logger log = Logger.getLogger(TestEnricher.class.getName());
 

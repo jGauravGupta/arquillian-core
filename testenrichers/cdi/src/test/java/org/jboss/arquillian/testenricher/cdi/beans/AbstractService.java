@@ -17,7 +17,7 @@
  */
 package org.jboss.arquillian.testenricher.cdi.beans;
 
-import javax.annotation.PreDestroy;
+import jakarta.annotation.PreDestroy;
 
 /**
  * AbstractService

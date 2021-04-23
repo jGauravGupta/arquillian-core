@@ -18,7 +18,7 @@ package org.jboss.arquillian.testenricher.resource;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import org.junit.Assert;
 import org.junit.Test;
 

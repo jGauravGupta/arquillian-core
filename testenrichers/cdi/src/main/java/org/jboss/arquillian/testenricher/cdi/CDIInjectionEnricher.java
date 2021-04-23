@@ -18,9 +18,9 @@ package org.jboss.arquillian.testenricher.cdi;
 
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
-import javax.enterprise.context.spi.CreationalContext;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.enterprise.inject.spi.InjectionTarget;
+import jakarta.enterprise.context.spi.CreationalContext;
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.InjectionTarget;
 import org.jboss.arquillian.core.api.Instance;
 import org.jboss.arquillian.core.api.InstanceProducer;
 import org.jboss.arquillian.core.api.annotation.Inject;
@@ -34,7 +34,7 @@ import org.jboss.arquillian.test.spi.annotation.TestScoped;
  * @version $Revision: $
  */
 public class CDIInjectionEnricher implements TestEnricher {
-    private static final String ANNOTATION_NAME = "javax.inject.Inject";
+    private static final String ANNOTATION_NAME = "jakarta.inject.Inject";
 
     private static final Logger log = Logger.getLogger(TestEnricher.class.getName());
 

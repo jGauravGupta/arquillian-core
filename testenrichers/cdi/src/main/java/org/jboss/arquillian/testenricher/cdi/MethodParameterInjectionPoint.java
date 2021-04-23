@@ -23,14 +23,15 @@ import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import javax.enterprise.inject.Default;
-import javax.enterprise.inject.spi.Annotated;
-import javax.enterprise.inject.spi.AnnotatedCallable;
-import javax.enterprise.inject.spi.AnnotatedParameter;
-import javax.enterprise.inject.spi.Bean;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.enterprise.inject.spi.InjectionPoint;
-import javax.enterprise.util.AnnotationLiteral;
+import jakarta.enterprise.inject.Default;
+import jakarta.enterprise.inject.spi.Annotated;
+import jakarta.enterprise.inject.spi.AnnotatedCallable;
+import jakarta.enterprise.inject.spi.AnnotatedParameter;
+import jakarta.enterprise.inject.spi.Bean;
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.InjectionPoint;
+import jakarta.enterprise.util.AnnotationLiteral;
+import java.lang.reflect.Parameter;
 
 /**
  * MethodParameterInjectionPoint
@@ -51,21 +52,21 @@ public class MethodParameterInjectionPoint<T> implements InjectionPoint {
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#getBean()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#getBean()
      */
     public Bean<?> getBean() {
         return null;
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#getMember()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#getMember()
      */
     public Member getMember() {
         return method;
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#getQualifiers()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#getQualifiers()
      */
     public Set<Annotation> getQualifiers() {
         Set<Annotation> qualifiers = new HashSet<Annotation>();
@@ -85,28 +86,28 @@ public class MethodParameterInjectionPoint<T> implements InjectionPoint {
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#getType()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#getType()
      */
     public Type getType() {
         return findTypeOrGenericType();
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#isDelegate()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#isDelegate()
      */
     public boolean isDelegate() {
         return false;
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#isTransient()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#isTransient()
      */
     public boolean isTransient() {
         return false;
     }
 
     /* (non-Javadoc)
-     * @see javax.enterprise.inject.spi.InjectionPoint#getAnnotated()
+     * @see jakarta.enterprise.inject.spi.InjectionPoint#getAnnotated()
      */
     public Annotated getAnnotated() {
         return new ArgumentAnnotated<T>();
@@ -126,21 +127,21 @@ public class MethodParameterInjectionPoint<T> implements InjectionPoint {
     private class ArgumentAnnotated<X> implements AnnotatedParameter<X> {
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.AnnotatedParameter#getDeclaringCallable()
+         * @see jakarta.enterprise.inject.spi.AnnotatedParameter#getDeclaringCallable()
          */
         public AnnotatedCallable<X> getDeclaringCallable() {
             return null;
         }
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.AnnotatedParameter#getPosition()
+         * @see jakarta.enterprise.inject.spi.AnnotatedParameter#getPosition()
          */
         public int getPosition() {
             return position;
         }
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.Annotated#getAnnotation(java.lang.Class)
+         * @see jakarta.enterprise.inject.spi.Annotated#getAnnotation(java.lang.Class)
          */
         public <Y extends Annotation> Y getAnnotation(Class<Y> annotationType) {
             for (Annotation annotation : method.getParameterAnnotations()[position]) {
@@ -152,21 +153,25 @@ public class MethodParameterInjectionPoint<T> implements InjectionPoint {
         }
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.Annotated#getAnnotations()
+         * @see jakarta.enterprise.inject.spi.Annotated#getAnnotations()
          */
         public Set<Annotation> getAnnotations() {
             return new HashSet<Annotation>(Arrays.asList(method.getParameterAnnotations()[position]));
         }
+        
+        public <T extends Annotation> Set<T> getAnnotations(Class<T> annotationType) {
+            return AnnotatedParameter.super.getAnnotations(annotationType);
+        }
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.Annotated#getBaseType()
+         * @see jakarta.enterprise.inject.spi.Annotated#getBaseType()
          */
         public Type getBaseType() {
             return getType();
         }
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.Annotated#getTypeClosure()
+         * @see jakarta.enterprise.inject.spi.Annotated#getTypeClosure()
          */
         public Set<Type> getTypeClosure() {
             Set<Type> types = new HashSet<Type>();
@@ -176,7 +181,7 @@ public class MethodParameterInjectionPoint<T> implements InjectionPoint {
         }
 
         /* (non-Javadoc)
-         * @see javax.enterprise.inject.spi.Annotated#isAnnotationPresent(java.lang.Class)
+         * @see jakarta.enterprise.inject.spi.Annotated#isAnnotationPresent(java.lang.Class)
          */
         public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
             return getAnnotation(annotationType) != null;

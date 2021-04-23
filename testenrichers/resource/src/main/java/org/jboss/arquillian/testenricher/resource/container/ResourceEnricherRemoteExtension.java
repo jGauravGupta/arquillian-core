@@ -31,7 +31,7 @@ public class ResourceEnricherRemoteExtension implements RemoteLoadableExtension 
     @Override
     public void register(ExtensionBuilder builder) {
         // only load if Resource is on ClassPath
-        if (Validate.classExists("javax.annotation.Resource")) {
+        if (Validate.classExists("jakarta.annotation.Resource")) {
             builder.service(TestEnricher.class, ResourceInjectionEnricher.class);
         }
     }

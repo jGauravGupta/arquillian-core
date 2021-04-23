@@ -37,7 +37,7 @@ public class CDIEnricherExtension implements LoadableExtension {
             .service(ProtocolArchiveProcessor.class, BeansXMLProtocolProcessor.class);
 
         // only load if BeanManager is on ClassPath
-        if (Validate.classExists("javax.enterprise.inject.spi.BeanManager")) {
+        if (Validate.classExists("jakarta.enterprise.inject.spi.BeanManager")) {
             builder.service(TestEnricher.class, CDIInjectionEnricher.class);
             builder.observer(CreationalContextDestroyer.class);
         }

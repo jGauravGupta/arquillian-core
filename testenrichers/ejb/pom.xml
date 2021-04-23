@@ -24,7 +24,7 @@
 
     <!-- Versioning -->
     <version.jboss-spec-ejb>1.0.2.Final</version.jboss-spec-ejb>
-    <version.javax_ejb>3.0</version.javax_ejb>
+    <version.javax_ejb>4.0.0</version.javax_ejb>
 
   </properties>
 
@@ -68,9 +68,9 @@
       </activation>
       <dependencies>
         <dependency>
-          <groupId>org.jboss.spec.javax.ejb</groupId>
-          <artifactId>jboss-ejb-api_3.1_spec</artifactId>
-          <version>${version.jboss-spec-ejb}</version>
+          <groupId>jakarta.ejb</groupId>
+          <artifactId>jakarta.ejb-api</artifactId>
+          <version>4.0.0</version>
           <scope>provided</scope>
         </dependency>
       </dependencies>

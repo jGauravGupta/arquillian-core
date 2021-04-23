@@ -32,7 +32,7 @@ public class CDIEnricherRemoteExtension implements RemoteLoadableExtension {
     @Override
     public void register(ExtensionBuilder builder) {
         // only load if BeanManager is on ClassPath
-        if (Validate.classExists("javax.enterprise.inject.spi.BeanManager")) {
+        if (Validate.classExists("jakarta.enterprise.inject.spi.BeanManager")) {
             builder.service(TestEnricher.class, CDIInjectionEnricher.class);
             builder.observer(BeanManagerProducer.class)
                 .observer(CreationalContextDestroyer.class);

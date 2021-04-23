@@ -34,7 +34,7 @@ public class ResourceEnricherExtension implements LoadableExtension {
         builder.service(AuxiliaryArchiveAppender.class, ResourceEnricherArchiveAppender.class);
 
         // only load if Resource is on ClassPath
-        if (Validate.classExists("javax.annotation.Resource")) {
+        if (Validate.classExists("jakarta.annotation.Resource")) {
             builder.service(TestEnricher.class, ResourceInjectionEnricher.class);
         }
     }

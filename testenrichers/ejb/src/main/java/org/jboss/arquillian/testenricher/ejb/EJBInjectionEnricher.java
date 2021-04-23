@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 import java.text.MessageFormat;
 import java.util.List;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
+import jakarta.ejb.EJB;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import org.jboss.arquillian.core.api.Instance;
@@ -38,7 +38,7 @@ import org.jboss.arquillian.test.spi.TestEnricher;
  * @version $Revision: $
  */
 public class EJBInjectionEnricher implements TestEnricher {
-    private static final String ANNOTATION_NAME = "javax.ejb.EJB";
+    private static final String ANNOTATION_NAME = "jakarta.ejb.EJB";
 
     private static final Logger log = Logger.getLogger(TestEnricher.class.getName());
 

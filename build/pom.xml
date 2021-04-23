@@ -23,7 +23,7 @@
   <properties>
 
     <!-- Arquillian Core common Deps, Test related -->
-    <version.javax.inject>1</version.javax.inject>
+    <version.jakarta.inject>2.0.0</version.jakarta.inject>
     <version.junit>4.13.1</version.junit>
     <version.junit5>5.7.1</version.junit5>
     <version.junit5.platform>1.7.1</version.junit5.platform>
@@ -36,9 +36,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>javax.inject</groupId>
-        <artifactId>javax.inject</artifactId>
-        <version>${version.javax.inject}</version>
+        <groupId>jakarta.inject</groupId>
+        <artifactId>jakarta.inject-api</artifactId>
+        <version>${version.jakarta.inject}</version>
         <scope>provided</scope>
       </dependency>
 

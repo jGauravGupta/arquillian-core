@@ -23,8 +23,8 @@
   <properties>
 
     <!-- Versioning -->
-    <version.weld-core>1.1.34.Final</version.weld-core>
-    <version.javax-el>2.2</version.javax-el>
+    <version.weld-core>3.0.0.Alpha6</version.weld-core>
+    <version.jakarta-el>4.0.0</version.jakarta-el>
     <version.slf4j>1.7.30</version.slf4j>
 
   </properties>
@@ -46,9 +46,9 @@
     </dependency>
 
     <dependency>
-      <groupId>javax.enterprise</groupId>
-      <artifactId>cdi-api</artifactId>
-      <version>1.0</version>
+      <groupId>jakarta.enterprise</groupId>
+      <artifactId>jakarta.enterprise.cdi-api</artifactId>
+      <version>3.0.0</version>
       <scope>provided</scope>
     </dependency>
 
@@ -93,19 +93,19 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
+<!--    <dependency>
       <groupId>org.jboss.weld</groupId>
       <artifactId>weld-core</artifactId>
       <version>${version.weld-core}</version>
       <scope>test</scope>
-      <!-- ARQ-990 Removed, not needed runtime and not part of Fedora Maven Packages -->
+       ARQ-990 Removed, not needed runtime and not part of Fedora Maven Packages 
       <exclusions>
         <exclusion>
           <groupId>org.jboss.weld</groupId>
           <artifactId>weld-build-config</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
@@ -113,9 +113,15 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>javax.el</groupId>
-      <artifactId>el-api</artifactId>
-      <version>${version.javax-el}</version>
+      <groupId>jakarta.el</groupId>
+      <artifactId>jakarta.el-api</artifactId>
+      <version>${version.jakarta-el}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.weld</groupId>
+      <artifactId>weld-osgi-bundle</artifactId>
+      <version>4.0.1.Final</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

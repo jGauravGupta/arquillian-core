@@ -131,7 +131,7 @@ public class ExceptionProxyTestCase {
         }
     }
 
-    // simulate javax.enterprise.inject
+    // simulate jakarta.enterprise.inject
     public static class UnsatisfiedResolutionException extends ResolutionException {
         private static final long serialVersionUID = 5350603312442756709L;
 

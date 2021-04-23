@@ -1,7 +1,7 @@
 package ${enclosing_package};
 
-    import javax.enterprise.inject.spi.BeanManager;
-    import javax.inject.Inject;
+    import jakarta.enterprise.inject.spi.BeanManager;
+    import jakarta.inject.Inject;
     import static org.junit.Assert.*;
     import org.jboss.arquillian.api.Deployment;
     import org.jboss.arquillian.junit.Arquillian;

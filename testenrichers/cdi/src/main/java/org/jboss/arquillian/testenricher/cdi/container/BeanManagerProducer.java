@@ -18,7 +18,7 @@
 package org.jboss.arquillian.testenricher.cdi.container;
 
 import java.util.logging.Logger;
-import javax.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.BeanManager;
 import javax.naming.Context;
 import org.jboss.arquillian.core.api.InstanceProducer;
 import org.jboss.arquillian.core.api.annotation.ApplicationScoped;
